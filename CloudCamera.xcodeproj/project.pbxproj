@@ -13,6 +13,7 @@
 		48233F231DB02AA5005D0262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48233F211DB02AA5005D0262 /* Main.storyboard */; };
 		48233F251DB02AA5005D0262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48233F241DB02AA5005D0262 /* Assets.xcassets */; };
 		48233F281DB02AA5005D0262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48233F261DB02AA5005D0262 /* LaunchScreen.storyboard */; };
+		48233F301DB02CFC005D0262 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48233F2F1DB02CFC005D0262 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		48233F241DB02AA5005D0262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48233F271DB02AA5005D0262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48233F291DB02AA5005D0262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48233F2F1DB02CFC005D0262 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		48233F181DB02AA5005D0262 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				48233F2F1DB02CFC005D0262 /* GoogleService-Info.plist */,
 				48233F191DB02AA5005D0262 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48233F281DB02AA5005D0262 /* LaunchScreen.storyboard in Resources */,
+				48233F301DB02CFC005D0262 /* GoogleService-Info.plist in Resources */,
 				48233F251DB02AA5005D0262 /* Assets.xcassets in Resources */,
 				48233F231DB02AA5005D0262 /* Main.storyboard in Resources */,
 			);
