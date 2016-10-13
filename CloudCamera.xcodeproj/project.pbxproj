@@ -14,6 +14,7 @@
 		48233F251DB02AA5005D0262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48233F241DB02AA5005D0262 /* Assets.xcassets */; };
 		48233F281DB02AA5005D0262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48233F261DB02AA5005D0262 /* LaunchScreen.storyboard */; };
 		48233F301DB02CFC005D0262 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48233F2F1DB02CFC005D0262 /* GoogleService-Info.plist */; };
+		9B42655A1552B47801BAE0DA /* Pods_CloudCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1002262E187E415B17910A /* Pods_CloudCamera.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		48233F271DB02AA5005D0262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48233F291DB02AA5005D0262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48233F2F1DB02CFC005D0262 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE8C13F0F8368759752AA936 /* Pods-CloudCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudCamera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudCamera/Pods-CloudCamera.debug.xcconfig"; sourceTree = "<group>"; };
+		DA1002262E187E415B17910A /* Pods_CloudCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F384A3BC7CC886C82964E896 /* Pods-CloudCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudCamera/Pods-CloudCamera.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B42655A1552B47801BAE0DA /* Pods_CloudCamera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01440C65BC26F78261511349 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA1002262E187E415B17910A /* Pods_CloudCamera.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		48233F0C1DB02AA5005D0262 = {
 			isa = PBXGroup;
 			children = (
 				48233F171DB02AA5005D0262 /* CloudCamera */,
 				48233F161DB02AA5005D0262 /* Products */,
+				5C24BDDCA4AD94154FCEAA01 /* Pods */,
+				01440C65BC26F78261511349 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +97,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5C24BDDCA4AD94154FCEAA01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C13F0F8368759752AA936 /* Pods-CloudCamera.debug.xcconfig */,
+				F384A3BC7CC886C82964E896 /* Pods-CloudCamera.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48233F2C1DB02AA5005D0262 /* Build configuration list for PBXNativeTarget "CloudCamera" */;
 			buildPhases = (
+				8E3F5C606CFB8CABCF3265D8 /* [CP] Check Pods Manifest.lock */,
 				48233F111DB02AA5005D0262 /* Sources */,
 				48233F121DB02AA5005D0262 /* Frameworks */,
 				48233F131DB02AA5005D0262 /* Resources */,
+				DE2C5C3E0DD4837E1A462A6C /* [CP] Embed Pods Frameworks */,
+				A7D22CF8B88692E0FC8751E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E3F5C606CFB8CABCF3265D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A7D22CF8B88692E0FC8751E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CloudCamera/Pods-CloudCamera-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE2C5C3E0DD4837E1A462A6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CloudCamera/Pods-CloudCamera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		48233F111DB02AA5005D0262 /* Sources */ = {
@@ -275,6 +350,7 @@
 		};
 		48233F2D1DB02AA5005D0262 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE8C13F0F8368759752AA936 /* Pods-CloudCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FJ4YRZ38Y3;
@@ -287,6 +363,7 @@
 		};
 		48233F2E1DB02AA5005D0262 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F384A3BC7CC886C82964E896 /* Pods-CloudCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FJ4YRZ38Y3;
@@ -316,6 +393,7 @@
 				48233F2E1DB02AA5005D0262 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
