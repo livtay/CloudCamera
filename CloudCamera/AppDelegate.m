@@ -8,8 +8,11 @@
 
 #import "AppDelegate.h"
 @import Firebase;
+#import "TabBarController.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) UITabBarController *tabBarController;
 
 @end
 
@@ -19,6 +22,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [FIRApp configure];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.tabBarController = [[TabBarController alloc] init];
+    self.window.rootViewController = self.tabBarController;
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

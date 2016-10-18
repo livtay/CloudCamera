@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		48233F1A1DB02AA5005D0262 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48233F191DB02AA5005D0262 /* main.m */; };
 		48233F1D1DB02AA5005D0262 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48233F1C1DB02AA5005D0262 /* AppDelegate.m */; };
-		48233F201DB02AA5005D0262 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48233F1F1DB02AA5005D0262 /* ViewController.m */; };
-		48233F231DB02AA5005D0262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48233F211DB02AA5005D0262 /* Main.storyboard */; };
 		48233F251DB02AA5005D0262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48233F241DB02AA5005D0262 /* Assets.xcassets */; };
 		48233F281DB02AA5005D0262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48233F261DB02AA5005D0262 /* LaunchScreen.storyboard */; };
 		48233F301DB02CFC005D0262 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48233F2F1DB02CFC005D0262 /* GoogleService-Info.plist */; };
+		48546BB81DB144D5004BCB58 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 48546BB71DB144D5004BCB58 /* Image.m */; };
+		48546BBD1DB14520004BCB58 /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 48546BBC1DB14520004BCB58 /* DAO.m */; };
+		48546BC01DB52D88004BCB58 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48546BBF1DB52D88004BCB58 /* TabBarController.m */; };
+		48546BC91DB52DE8004BCB58 /* NewImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48546BC71DB52DE8004BCB58 /* NewImageViewController.m */; };
+		48546BCA1DB52DE8004BCB58 /* NewImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48546BC81DB52DE8004BCB58 /* NewImageViewController.xib */; };
+		48546BCE1DB567A0004BCB58 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48546BCC1DB567A0004BCB58 /* CollectionViewCell.m */; };
+		48546BCF1DB567A0004BCB58 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48546BCD1DB567A0004BCB58 /* CollectionViewCell.xib */; };
+		48546BD31DB56A82004BCB58 /* ImageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48546BD11DB56A82004BCB58 /* ImageCollectionViewController.m */; };
+		48546BD41DB56A82004BCB58 /* ImageCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48546BD21DB56A82004BCB58 /* ImageCollectionViewController.xib */; };
 		9B42655A1552B47801BAE0DA /* Pods_CloudCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1002262E187E415B17910A /* Pods_CloudCamera.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,13 +29,25 @@
 		48233F191DB02AA5005D0262 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48233F1B1DB02AA5005D0262 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48233F1C1DB02AA5005D0262 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		48233F1E1DB02AA5005D0262 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		48233F1F1DB02AA5005D0262 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		48233F221DB02AA5005D0262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48233F241DB02AA5005D0262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48233F271DB02AA5005D0262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48233F291DB02AA5005D0262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48233F2F1DB02CFC005D0262 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48546BB61DB144D5004BCB58 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		48546BB71DB144D5004BCB58 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		48546BBB1DB14520004BCB58 /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
+		48546BBC1DB14520004BCB58 /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
+		48546BBE1DB52D88004BCB58 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		48546BBF1DB52D88004BCB58 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		48546BC61DB52DE8004BCB58 /* NewImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewImageViewController.h; sourceTree = "<group>"; };
+		48546BC71DB52DE8004BCB58 /* NewImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewImageViewController.m; sourceTree = "<group>"; };
+		48546BC81DB52DE8004BCB58 /* NewImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewImageViewController.xib; sourceTree = "<group>"; };
+		48546BCB1DB567A0004BCB58 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		48546BCC1DB567A0004BCB58 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		48546BCD1DB567A0004BCB58 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		48546BD01DB56A82004BCB58 /* ImageCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewController.h; sourceTree = "<group>"; };
+		48546BD11DB56A82004BCB58 /* ImageCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewController.m; sourceTree = "<group>"; };
+		48546BD21DB56A82004BCB58 /* ImageCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewController.xib; sourceTree = "<group>"; };
 		CE8C13F0F8368759752AA936 /* Pods-CloudCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudCamera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CloudCamera/Pods-CloudCamera.debug.xcconfig"; sourceTree = "<group>"; };
 		DA1002262E187E415B17910A /* Pods_CloudCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F384A3BC7CC886C82964E896 /* Pods-CloudCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudCamera/Pods-CloudCamera.release.xcconfig"; sourceTree = "<group>"; };
@@ -57,6 +76,8 @@
 		48233F0C1DB02AA5005D0262 = {
 			isa = PBXGroup;
 			children = (
+				48546BBA1DB144EA004BCB58 /* App Delegate */,
+				48546BB91DB144DA004BCB58 /* Data Model */,
 				48233F171DB02AA5005D0262 /* CloudCamera */,
 				48233F161DB02AA5005D0262 /* Products */,
 				5C24BDDCA4AD94154FCEAA01 /* Pods */,
@@ -75,11 +96,17 @@
 		48233F171DB02AA5005D0262 /* CloudCamera */ = {
 			isa = PBXGroup;
 			children = (
-				48233F1B1DB02AA5005D0262 /* AppDelegate.h */,
-				48233F1C1DB02AA5005D0262 /* AppDelegate.m */,
-				48233F1E1DB02AA5005D0262 /* ViewController.h */,
-				48233F1F1DB02AA5005D0262 /* ViewController.m */,
-				48233F211DB02AA5005D0262 /* Main.storyboard */,
+				48546BBE1DB52D88004BCB58 /* TabBarController.h */,
+				48546BBF1DB52D88004BCB58 /* TabBarController.m */,
+				48546BD01DB56A82004BCB58 /* ImageCollectionViewController.h */,
+				48546BD11DB56A82004BCB58 /* ImageCollectionViewController.m */,
+				48546BD21DB56A82004BCB58 /* ImageCollectionViewController.xib */,
+				48546BCB1DB567A0004BCB58 /* CollectionViewCell.h */,
+				48546BCC1DB567A0004BCB58 /* CollectionViewCell.m */,
+				48546BCD1DB567A0004BCB58 /* CollectionViewCell.xib */,
+				48546BC61DB52DE8004BCB58 /* NewImageViewController.h */,
+				48546BC71DB52DE8004BCB58 /* NewImageViewController.m */,
+				48546BC81DB52DE8004BCB58 /* NewImageViewController.xib */,
 				48233F241DB02AA5005D0262 /* Assets.xcassets */,
 				48233F261DB02AA5005D0262 /* LaunchScreen.storyboard */,
 				48233F291DB02AA5005D0262 /* Info.plist */,
@@ -95,6 +122,28 @@
 				48233F191DB02AA5005D0262 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48546BB91DB144DA004BCB58 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				48546BBB1DB14520004BCB58 /* DAO.h */,
+				48546BBC1DB14520004BCB58 /* DAO.m */,
+				48546BB61DB144D5004BCB58 /* Image.h */,
+				48546BB71DB144D5004BCB58 /* Image.m */,
+			);
+			name = "Data Model";
+			path = CloudCamera;
+			sourceTree = "<group>";
+		};
+		48546BBA1DB144EA004BCB58 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				48233F1B1DB02AA5005D0262 /* AppDelegate.h */,
+				48233F1C1DB02AA5005D0262 /* AppDelegate.m */,
+			);
+			name = "App Delegate";
+			path = CloudCamera;
 			sourceTree = "<group>";
 		};
 		5C24BDDCA4AD94154FCEAA01 /* Pods */ = {
@@ -168,10 +217,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48546BCA1DB52DE8004BCB58 /* NewImageViewController.xib in Resources */,
+				48546BD41DB56A82004BCB58 /* ImageCollectionViewController.xib in Resources */,
+				48546BCF1DB567A0004BCB58 /* CollectionViewCell.xib in Resources */,
 				48233F281DB02AA5005D0262 /* LaunchScreen.storyboard in Resources */,
 				48233F301DB02CFC005D0262 /* GoogleService-Info.plist in Resources */,
 				48233F251DB02AA5005D0262 /* Assets.xcassets in Resources */,
-				48233F231DB02AA5005D0262 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,23 +281,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48233F201DB02AA5005D0262 /* ViewController.m in Sources */,
+				48546BBD1DB14520004BCB58 /* DAO.m in Sources */,
+				48546BB81DB144D5004BCB58 /* Image.m in Sources */,
+				48546BC01DB52D88004BCB58 /* TabBarController.m in Sources */,
 				48233F1D1DB02AA5005D0262 /* AppDelegate.m in Sources */,
 				48233F1A1DB02AA5005D0262 /* main.m in Sources */,
+				48546BCE1DB567A0004BCB58 /* CollectionViewCell.m in Sources */,
+				48546BD31DB56A82004BCB58 /* ImageCollectionViewController.m in Sources */,
+				48546BC91DB52DE8004BCB58 /* NewImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		48233F211DB02AA5005D0262 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				48233F221DB02AA5005D0262 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		48233F261DB02AA5005D0262 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
