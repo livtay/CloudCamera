@@ -47,12 +47,6 @@
     
     [super viewWillAppear:animated];
     
-    // [self.view setTranslatesAutoresizingMaskIntoConstraints:YES];
-    CGRect f = CGRectMake(0, 100, 200, 30);
-    self.addCommentField.frame = f;
-    
-    
-    
     self.imageView.image = self.image.image;
     self.likeLabel.text = [NSString stringWithFormat:@"%d likes", self.image.likes];
     
@@ -64,7 +58,7 @@
         [self.likeButton setImage:[UIImage imageNamed:@"icn_active"] forState:UIControlStateNormal];
     }
     
-   // self.addCommentField.hidden = YES;
+    self.addCommentField.hidden = YES;
     [self.commentTable reloadData];
 }
 
@@ -165,27 +159,6 @@
     [[DAO sharedInstance] updatePhotoDetailsInFirebase:self.image];
     [self.commentTable reloadData];
     [self.view endEditing:YES];
-}
-
-- (void)keyboardWillShow:(NSNotification*)notification {
-   
-     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    [UIView animateWithDuration:0.3 animations:^{
-        CGRect f = self.view.frame;
-        f.origin.y =  50;//f.size.height - keyboardSize.height -250;
-        f.size.height = 30;// self.addCommentField.frame.size.height;
-        [self.addCommentField removeConstraints:self.addCommentField.constraints];
-        self.addCommentField.frame = f;
-     }];
-}
-
-- (void)keyboardWillHide:(NSNotification*)notification {
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        CGRect f = self.view.frame;
-        f.origin.y = 0.0f;
-        self.view.frame = f;
-    }];
 }
 
 
