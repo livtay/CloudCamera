@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Comment.h"
 
 @interface Image : NSObject
+
+@property (nonatomic, retain) NSMutableArray <Comment*> *comments;
 
 @property (nonatomic, retain) NSString *databaseId;
 @property (retain, nonatomic) UIImage *image;

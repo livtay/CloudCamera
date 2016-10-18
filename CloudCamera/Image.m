@@ -26,6 +26,7 @@
         }
         
         _likes = 0;
+        _comments = [[NSMutableArray alloc] init];
         
         return self;
     }

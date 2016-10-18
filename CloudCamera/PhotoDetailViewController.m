@@ -7,6 +7,8 @@
 //
 
 #import "PhotoDetailViewController.h"
+#import "CommentTableViewCell.h"
+#import "Comment.h"
 
 @interface PhotoDetailViewController ()
 
@@ -20,7 +22,20 @@
     self.title = @"Photo Detail";
     self.commentTable.delegate = self;
     self.commentTable.dataSource = self;
+    self.addCommentField.delegate = self;
     self.likeLabel.hidden = YES;
+    
+    self.tabBarController.tabBar.hidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +44,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    // [self.view setTranslatesAutoresizingMaskIntoConstraints:YES];
+    CGRect f = CGRectMake(0, 100, 200, 30);
+    self.addCommentField.frame = f;
+    
+    
     
     self.imageView.image = self.image.image;
     self.likeLabel.text = [NSString stringWithFormat:@"%d likes", self.image.likes];
@@ -40,6 +63,9 @@
         self.likeLabel.hidden = NO;
         [self.likeButton setImage:[UIImage imageNamed:@"icn_active"] forState:UIControlStateNormal];
     }
+    
+   // self.addCommentField.hidden = YES;
+    [self.commentTable reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -47,12 +73,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.image.comments.count;
 }
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//}
 
 - (IBAction)likePressed:(id)sender {
     
@@ -97,6 +119,73 @@
 
 - (IBAction)commentPressed:(id)sender {
     
+    if (self.addCommentField.hidden == YES) {
+        self.addCommentField.hidden = NO;
+    } else {
+        self.addCommentField.hidden = YES;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    static NSString *CellIdentifier = @"CommentTableViewCell";
+    CommentTableViewCell *cell = (CommentTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    Comment *newComment = self.image.comments[indexPath.row];
+    
+    cell.labelUsername.text = newComment.username;
+    cell.labelComment.text = newComment.comment;
+
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return UITableViewAutomaticDimension;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self addComment];
+    return YES;
+}
+
+- (void)addComment {
+    
+    self.addCommentField.hidden = YES;
+    
+    Comment *newComment = [[Comment alloc] init];
+    newComment.username = @"livtay";
+    newComment.comment = self.addCommentField.text;
+    [self.image.comments addObject:newComment];
+    
+    [[DAO sharedInstance] updatePhotoDetailsInFirebase:self.image];
+    [self.commentTable reloadData];
+    [self.view endEditing:YES];
+}
+
+- (void)keyboardWillShow:(NSNotification*)notification {
+   
+     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.view.frame;
+        f.origin.y =  50;//f.size.height - keyboardSize.height -250;
+        f.size.height = 30;// self.addCommentField.frame.size.height;
+        [self.addCommentField removeConstraints:self.addCommentField.constraints];
+        self.addCommentField.frame = f;
+     }];
+}
+
+- (void)keyboardWillHide:(NSNotification*)notification {
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.view.frame;
+        f.origin.y = 0.0f;
+        self.view.frame = f;
+    }];
 }
 
 

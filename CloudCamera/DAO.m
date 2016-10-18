@@ -72,6 +72,16 @@
                 cloudImage.dateAdded = dictionary[@"date"];
                 cloudImage.likes = [dictionary[@"likes"] intValue];
                 cloudImage.databaseId = key;
+                cloudImage.comments = [[NSMutableArray alloc] init];
+                
+                NSDictionary *commentsDictionary = dictionary[@"comments"];
+                
+                for (NSString *key in commentsDictionary.allKeys) {
+                    Comment *newComment = [[Comment alloc] init];
+                    newComment.username = commentsDictionary[key][@"username"];
+                    newComment.comment = commentsDictionary[key][@"commentText"];
+                    [cloudImage.comments addObject:newComment];
+                }
                 
                 [self getPhotoFromFirebase:cloudImage];
                 [self.images addObject:cloudImage];
@@ -116,7 +126,7 @@
     NSNumber *likes = [NSNumber numberWithInteger:newImage.likes];
     
     NSString *imageId = [NSString stringWithFormat:@"%d", newImage.imageId];
-    NSDictionary *imageDictionary = @{@"imageId" : imageId, @"name" : newImage.imageName, @"date" : dateAdded, @"likes" : likes};
+    NSDictionary *imageDictionary = @{@"imageId" : imageId, @"name" : newImage.imageName, @"date" : dateAdded, @"likes" : likes, @"comments" : newImage.comments};
     
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:imageDictionary options:0 error:&error];
@@ -175,7 +185,14 @@
     NSURLSession *session = [NSURLSession sharedSession];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:firebaseString]];
     
-    NSDictionary *updatedDictionary = @{@"likes" : [NSNumber numberWithInteger:image.likes]};
+    NSMutableDictionary *comments = [[NSMutableDictionary alloc] init];
+    for (int i = 0; i < image.comments.count; i++) {
+        NSString *commentId = [NSString stringWithFormat:@"comment%d", i+1];
+        Comment *comment = image.comments[i];
+        [comments setValue:@{@"username" : comment.username, @"commentText" : comment.comment} forKey:commentId];
+    }
+    
+    NSDictionary *updatedDictionary = @{@"likes" : [NSNumber numberWithInteger:image.likes], @"comments" : comments};
     NSData *data = [NSJSONSerialization dataWithJSONObject:updatedDictionary options:0 error:nil];
     
     [request setHTTPMethod:@"PATCH"];

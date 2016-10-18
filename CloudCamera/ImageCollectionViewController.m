@@ -50,6 +50,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    self.tabBarController.tabBar.hidden = NO;
     [self.collectionView reloadData];
 }
 

@@ -14,6 +14,9 @@
 		48233F301DB02CFC005D0262 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48233F2F1DB02CFC005D0262 /* GoogleService-Info.plist */; };
 		48472F701DB6A1CE00853A4A /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48472F6E1DB6A1CE00853A4A /* PhotoDetailViewController.m */; };
 		48472F711DB6A1CE00853A4A /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48472F6F1DB6A1CE00853A4A /* PhotoDetailViewController.xib */; };
+		48472F761DB6BB2B00853A4A /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48472F741DB6BB2B00853A4A /* CommentTableViewCell.m */; };
+		48472F771DB6BB2B00853A4A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48472F751DB6BB2B00853A4A /* CommentTableViewCell.xib */; };
+		48472F7A1DB6BCDF00853A4A /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 48472F791DB6BCDF00853A4A /* Comment.m */; };
 		48546BB81DB144D5004BCB58 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 48546BB71DB144D5004BCB58 /* Image.m */; };
 		48546BBD1DB14520004BCB58 /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 48546BBC1DB14520004BCB58 /* DAO.m */; };
 		48546BC01DB52D88004BCB58 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48546BBF1DB52D88004BCB58 /* TabBarController.m */; };
@@ -38,6 +41,11 @@
 		48472F6D1DB6A1CE00853A4A /* PhotoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewController.h; sourceTree = "<group>"; };
 		48472F6E1DB6A1CE00853A4A /* PhotoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		48472F6F1DB6A1CE00853A4A /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
+		48472F731DB6BB2B00853A4A /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		48472F741DB6BB2B00853A4A /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		48472F751DB6BB2B00853A4A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		48472F781DB6BCDF00853A4A /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		48472F791DB6BCDF00853A4A /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		48546BB61DB144D5004BCB58 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		48546BB71DB144D5004BCB58 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		48546BBB1DB14520004BCB58 /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
@@ -108,6 +116,9 @@
 				48472F6D1DB6A1CE00853A4A /* PhotoDetailViewController.h */,
 				48472F6E1DB6A1CE00853A4A /* PhotoDetailViewController.m */,
 				48472F6F1DB6A1CE00853A4A /* PhotoDetailViewController.xib */,
+				48472F731DB6BB2B00853A4A /* CommentTableViewCell.h */,
+				48472F741DB6BB2B00853A4A /* CommentTableViewCell.m */,
+				48472F751DB6BB2B00853A4A /* CommentTableViewCell.xib */,
 				48233F241DB02AA5005D0262 /* Assets.xcassets */,
 				48233F261DB02AA5005D0262 /* LaunchScreen.storyboard */,
 				48233F291DB02AA5005D0262 /* Info.plist */,
@@ -148,6 +159,8 @@
 				48546BBC1DB14520004BCB58 /* DAO.m */,
 				48546BB61DB144D5004BCB58 /* Image.h */,
 				48546BB71DB144D5004BCB58 /* Image.m */,
+				48472F781DB6BCDF00853A4A /* Comment.h */,
+				48472F791DB6BCDF00853A4A /* Comment.m */,
 			);
 			name = "Data Model";
 			path = CloudCamera;
@@ -241,6 +254,7 @@
 				48233F281DB02AA5005D0262 /* LaunchScreen.storyboard in Resources */,
 				48233F301DB02CFC005D0262 /* GoogleService-Info.plist in Resources */,
 				48233F251DB02AA5005D0262 /* Assets.xcassets in Resources */,
+				48472F771DB6BB2B00853A4A /* CommentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +316,8 @@
 				48546BBD1DB14520004BCB58 /* DAO.m in Sources */,
 				48546BB81DB144D5004BCB58 /* Image.m in Sources */,
 				48546BC01DB52D88004BCB58 /* TabBarController.m in Sources */,
+				48472F7A1DB6BCDF00853A4A /* Comment.m in Sources */,
+				48472F761DB6BB2B00853A4A /* CommentTableViewCell.m in Sources */,
 				48233F1D1DB02AA5005D0262 /* AppDelegate.m in Sources */,
 				48472F701DB6A1CE00853A4A /* PhotoDetailViewController.m in Sources */,
 				48233F1A1DB02AA5005D0262 /* main.m in Sources */,

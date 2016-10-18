@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController">
             <connections>
+                <outlet property="addCommentField" destination="ovj-L1-7hl" id="gyG-gU-NtQ"/>
                 <outlet property="commentButton" destination="xPs-W3-93w" id="eXE-5A-GJ9"/>
                 <outlet property="commentTable" destination="6Gu-DE-ykf" id="leE-8D-pKG"/>
                 <outlet property="imageView" destination="1Wp-T6-bQm" id="cSP-FY-QW7"/>
@@ -61,6 +62,12 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Gu-DE-ykf">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment on this..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovj-L1-7hl">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Wp-T6-bQm">
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1Wp-T6-bQm" secondAttribute="height" multiplier="1:1" id="4Zf-i6-Fcp"/>
@@ -71,17 +78,20 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6Gu-DE-ykf" secondAttribute="trailing" id="1ti-Nb-P4r"/>
                 <constraint firstItem="ppM-00-zot" firstAttribute="top" secondItem="1Wp-T6-bQm" secondAttribute="bottom" id="2j1-eS-eev"/>
+                <constraint firstAttribute="trailing" secondItem="ovj-L1-7hl" secondAttribute="trailing" id="5WO-JB-pF4"/>
                 <constraint firstItem="g2j-cz-6JR" firstAttribute="leading" secondItem="ppM-00-zot" secondAttribute="trailing" constant="8" id="9Ze-la-Nkm"/>
                 <constraint firstItem="6Gu-DE-ykf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CQA-Aa-82j"/>
+                <constraint firstItem="ovj-L1-7hl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Jgo-K8-URU"/>
                 <constraint firstItem="6Gu-DE-ykf" firstAttribute="top" secondItem="ppM-00-zot" secondAttribute="bottom" id="Lvc-a1-Fdi"/>
                 <constraint firstAttribute="trailing" secondItem="1Wp-T6-bQm" secondAttribute="trailing" id="QhJ-wT-wYA"/>
+                <constraint firstAttribute="bottom" secondItem="ovj-L1-7hl" secondAttribute="bottom" id="Yhn-dM-y9q"/>
                 <constraint firstAttribute="trailing" secondItem="xPs-W3-93w" secondAttribute="trailing" id="a7W-qX-Ut1"/>
                 <constraint firstItem="xPs-W3-93w" firstAttribute="leading" secondItem="P9E-HR-F2A" secondAttribute="trailing" constant="8" id="bVQ-Sa-OXJ"/>
-                <constraint firstAttribute="bottom" secondItem="6Gu-DE-ykf" secondAttribute="bottom" id="cia-SO-Jqd"/>
                 <constraint firstItem="P9E-HR-F2A" firstAttribute="top" secondItem="1Wp-T6-bQm" secondAttribute="bottom" id="dP5-Hw-Dtg"/>
                 <constraint firstItem="xPs-W3-93w" firstAttribute="top" secondItem="1Wp-T6-bQm" secondAttribute="bottom" id="iVA-Of-9P7"/>
                 <constraint firstItem="1Wp-T6-bQm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="46" id="lIj-Qh-zgv"/>
                 <constraint firstItem="ppM-00-zot" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nPg-bA-cfM"/>
+                <constraint firstItem="ovj-L1-7hl" firstAttribute="top" secondItem="6Gu-DE-ykf" secondAttribute="bottom" id="o6W-HE-jkh"/>
                 <constraint firstItem="g2j-cz-6JR" firstAttribute="top" secondItem="1Wp-T6-bQm" secondAttribute="bottom" constant="10" id="prN-6m-bdC"/>
                 <constraint firstItem="1Wp-T6-bQm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xAB-H4-f0j"/>
             </constraints>

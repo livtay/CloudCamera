@@ -10,7 +10,7 @@
 #import "Image.h"
 #import "DAO.h"
 
-@interface PhotoDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PhotoDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, retain) Image *image;
 
@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *moreButton;
 @property (strong, nonatomic) IBOutlet UIButton *commentButton;
 @property (strong, nonatomic) IBOutlet UITableView *commentTable;
+@property (strong, nonatomic) IBOutlet UITextField *addCommentField;
 
 - (IBAction)likePressed:(id)sender;
 - (IBAction)morePressed:(id)sender;
