@@ -102,7 +102,7 @@
     }];
 }
 
-//add photo to firebase
+//add photo to firebase 
 
 - (void)addPhotoDetailsToFirebaseDatabase:(Image *)newImage {
     
