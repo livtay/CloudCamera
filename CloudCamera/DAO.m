@@ -70,6 +70,8 @@
                 cloudImage.imageId = [dictionary[@"imageId"] intValue];
                 cloudImage.imageName = dictionary[@"name"];
                 cloudImage.dateAdded = dictionary[@"date"];
+                cloudImage.likes = [dictionary[@"likes"] intValue];
+                cloudImage.databaseId = key;
                 
                 [self getPhotoFromFirebase:cloudImage];
                 [self.images addObject:cloudImage];
@@ -102,7 +104,7 @@
     }];
 }
 
-//add photo to firebase 
+//add photo to firebase
 
 - (void)addPhotoDetailsToFirebaseDatabase:(Image *)newImage {
     
@@ -111,9 +113,10 @@
 //    self.storageRef = [[FIRStorage storage] reference];
     
     NSString *dateAdded = [NSString stringWithFormat:@"%@", newImage.dateAdded];
+    NSNumber *likes = [NSNumber numberWithInteger:newImage.likes];
     
     NSString *imageId = [NSString stringWithFormat:@"%d", newImage.imageId];
-    NSDictionary *imageDictionary = @{@"imageId" : imageId, @"name" : newImage.imageName, @"date" : dateAdded};
+    NSDictionary *imageDictionary = @{@"imageId" : imageId, @"name" : newImage.imageName, @"date" : dateAdded, @"likes" : likes};
     
     NSError *error;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:imageDictionary options:0 error:&error];
@@ -163,6 +166,61 @@
     }];
     
 }
+
+//update photo in firebase
+
+- (void)updatePhotoDetailsInFirebase:(Image *)image {
+    
+    NSString *firebaseString = [NSString stringWithFormat:@"https://cloudcamera-497b1.firebaseio.com/photos2/%@.json", image.databaseId];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:firebaseString]];
+    
+    NSDictionary *updatedDictionary = @{@"likes" : [NSNumber numberWithInteger:image.likes]};
+    NSData *data = [NSJSONSerialization dataWithJSONObject:updatedDictionary options:0 error:nil];
+    
+    [request setHTTPMethod:@"PATCH"];
+    [request setHTTPBody:data];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+    }];
+    
+    [task resume];
+    
+}
+
+//delete photo from app and firebase
+
+- (void)deletePhotoDetailsFromDatabase:(Image *)image {
+    
+    [self.images removeObject:image];
+    
+    NSString *firebaseString = [NSString stringWithFormat:@"https://cloudcamera-497b1.firebaseio.com/photos2/%@.json", image.databaseId];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:firebaseString]];
+    
+    [request setHTTPMethod:@"DELETE"];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        [self deletePhotoDetailsFromDatabase:image];
+    }];
+    
+    [task resume];
+}
+
+- (void)deletePhotoFromStorage:(Image *)image {
+    
+    NSString *imageString = [NSString stringWithFormat:@"/images/%@", image.imageName];
+    FIRStorageReference *imageRef = [self.storageRef child:imageString];
+    
+    [imageRef deleteWithCompletion:^(NSError *error) {
+        if (error) {
+            NSLog(@"Delete Error: %@", error.localizedDescription);
+        }
+    }];
+}
+
 
 @end
 

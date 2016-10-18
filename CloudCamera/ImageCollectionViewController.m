@@ -10,10 +10,12 @@
 #import "DAO.h"
 #import "CollectionViewCell.h"
 #import "Image.h"
+#import "PhotoDetailViewController.h"
 
 @interface ImageCollectionViewController ()
 
 @property (retain, nonatomic) DAO *dao;
+@property (nonatomic, retain) PhotoDetailViewController *pdvc;
 
 @end
 
@@ -87,6 +89,13 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.imageView.image = imageView.image;
     
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.pdvc = [[PhotoDetailViewController alloc] init];
+    self.pdvc.image = [self.dao.images objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:self.pdvc animated:YES];
 }
 
 - (void)updateNotification {

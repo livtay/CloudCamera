@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController">
+            <connections>
+                <outlet property="commentButton" destination="xPs-W3-93w" id="eXE-5A-GJ9"/>
+                <outlet property="commentTable" destination="6Gu-DE-ykf" id="leE-8D-pKG"/>
+                <outlet property="imageView" destination="1Wp-T6-bQm" id="cSP-FY-QW7"/>
+                <outlet property="likeButton" destination="ppM-00-zot" id="rG0-7U-A3w"/>
+                <outlet property="likeLabel" destination="g2j-cz-6JR" id="I4i-gs-lgA"/>
+                <outlet property="moreButton" destination="P9E-HR-F2A" id="QLQ-d4-2fa"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppM-00-zot">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="jjt-2L-UoA"/>
+                        <constraint firstAttribute="width" constant="40" id="oVi-JD-qRb"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="icn_like"/>
+                    <connections>
+                        <action selector="likePressed:" destination="-1" eventType="touchUpInside" id="WEF-GT-hcO"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2j-cz-6JR">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPs-W3-93w">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="21m-0k-Uqj"/>
+                        <constraint firstAttribute="width" constant="40" id="A8U-Ah-eID"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="icn_comment"/>
+                    <connections>
+                        <action selector="commentPressed:" destination="-1" eventType="touchUpInside" id="1Kl-H6-LHL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9E-HR-F2A">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5oV-Oe-QMd"/>
+                        <constraint firstAttribute="width" constant="40" id="zYt-uZ-0W8"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="icn_like_more"/>
+                    <connections>
+                        <action selector="morePressed:" destination="-1" eventType="touchUpInside" id="T4m-Dg-m9Z"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Gu-DE-ykf">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Wp-T6-bQm">
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1Wp-T6-bQm" secondAttribute="height" multiplier="1:1" id="4Zf-i6-Fcp"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6Gu-DE-ykf" secondAttribute="trailing" id="1ti-Nb-P4r"/>
+                <constraint firstItem="ppM-00-zot" firstAttribute="top" secondItem="1Wp-T6-bQm" secondAttribute="bottom" id="2j1-eS-eev"/>
+                <constraint firstItem="g2j-cz-6JR" firstAttribute="leading" secondItem="ppM-00-zot" secondAttribute="trailing" constant="8" id="9Ze-la-Nkm"/>
+                <constraint firstItem="6Gu-DE-ykf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CQA-Aa-82j"/>
+                <constraint firstItem="6Gu-DE-ykf" firstAttribute="top" secondItem="ppM-00-zot" secondAttribute="bottom" id="Lvc-a1-Fdi"/>
+                <constraint firstAttribute="trailing" secondItem="1Wp-T6-bQm" secondAttribute="trailing" id="QhJ-wT-wYA"/>
+                <constraint firstAttribute="trailing" secondItem="xPs-W3-93w" secondAttribute="trailing" id="a7W-qX-Ut1"/>
+                <constraint firstItem="xPs-W3-93w" firstAttribute="leading" secondItem="P9E-HR-F2A" secondAttribute="trailing" constant="8" id="bVQ-Sa-OXJ"/>
+                <constraint firstAttribute="bottom" secondItem="6Gu-DE-ykf" secondAttribute="bottom" id="cia-SO-Jqd"/>
+                <constraint firstItem="P9E-HR-F2A" firstAttribute="top" secondItem="1Wp-T6-bQm" secondAttribute="bottom" id="dP5-Hw-Dtg"/>
+                <constraint firstItem="xPs-W3-93w" firstAttribute="top" secondItem="1Wp-T6-bQm" secondAttribute="bottom" id="iVA-Of-9P7"/>
+                <constraint firstItem="1Wp-T6-bQm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="46" id="lIj-Qh-zgv"/>
+                <constraint firstItem="ppM-00-zot" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nPg-bA-cfM"/>
+                <constraint firstItem="g2j-cz-6JR" firstAttribute="top" secondItem="1Wp-T6-bQm" secondAttribute="bottom" constant="10" id="prN-6m-bdC"/>
+                <constraint firstItem="1Wp-T6-bQm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xAB-H4-f0j"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icn_comment" width="48" height="48"/>
+        <image name="icn_like" width="48" height="48"/>
+        <image name="icn_like_more" width="48" height="48"/>
+    </resources>
+</document>

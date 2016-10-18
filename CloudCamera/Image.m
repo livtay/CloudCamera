@@ -25,6 +25,8 @@
             [defaults setInteger:self.imageId forKey:@"imageIdCounter"];
         }
         
+        _likes = 0;
+        
         return self;
     }
     return nil;

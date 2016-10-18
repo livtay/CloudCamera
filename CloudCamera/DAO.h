@@ -18,5 +18,7 @@
 
 + (DAO *)sharedInstance;
 - (void)addPhotoDetailsToFirebaseDatabase:(Image *)newImage;
+- (void)updatePhotoDetailsInFirebase:(Image *)image;
+- (void)deletePhotoDetailsFromDatabase:(Image *)image;
 
 @end
