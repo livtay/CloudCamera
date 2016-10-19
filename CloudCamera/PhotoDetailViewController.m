@@ -7,7 +7,6 @@
 //
 
 #import "PhotoDetailViewController.h"
-#import "CommentTableViewCell.h"
 #import "Comment.h"
 
 @interface PhotoDetailViewController ()
@@ -26,25 +25,13 @@
     self.likeLabel.hidden = YES;
     
     self.tabBarController.tabBar.hidden = YES;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardDidShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
     [super viewWillAppear:animated];
     
     self.imageView.image = self.image.image;
@@ -122,19 +109,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    static NSString *CellIdentifier = @"CommentTableViewCell";
-    CommentTableViewCell *cell = (CommentTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [cell.textLabel setLineBreakMode:NSLineBreakByWordWrapping];
+        cell.textLabel.numberOfLines = 0;
     }
     
     Comment *newComment = self.image.comments[indexPath.row];
-    
-    cell.labelUsername.text = newComment.username;
-    cell.labelComment.text = newComment.comment;
+    NSString *commentString = [NSString stringWithFormat:@"%@: %@", newComment.username, newComment.comment];
+    cell.textLabel.text = commentString;
 
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 100;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
