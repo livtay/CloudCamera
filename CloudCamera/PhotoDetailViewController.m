@@ -47,6 +47,7 @@
     
     self.addCommentField.hidden = YES;
     [self.commentTable reloadData];
+//    [DAO sharedInstance]
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

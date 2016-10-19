@@ -101,7 +101,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)updateNotification {
     
-    [self.collectionView reloadData];
+    [self.collectionView performSelectorOnMainThread:@selector(reloadData)
+                                          withObject:nil
+                                       waitUntilDone:NO];
 }
 
 

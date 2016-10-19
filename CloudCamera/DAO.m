@@ -118,7 +118,6 @@
 
 - (void)addPhotoDetailsToFirebaseDatabase:(Image *)newImage {
     
-    [self.images addObject:newImage];
     
     NSString *dateAdded = [NSString stringWithFormat:@"%@", newImage.dateAdded];
     NSNumber *likes = [NSNumber numberWithInteger:newImage.likes];
@@ -137,6 +136,10 @@
             NSLog(@"NSURLSession error: %@", error.localizedDescription);
             return;
         }
+        NSDictionary* responseDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        newImage.databaseId = responseDict[@"name"];
+        [self.images addObject:newImage];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Update" object:self userInfo:nil];
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -170,7 +173,7 @@
             if (error) {
                 NSLog(@"Storage Upload Error: %@", error.localizedDescription);
             }
-            [self getDataFromCloud];
+           // [self getDataFromCloud];
             #pragma unused (uploadTask)
     }];
   
@@ -219,7 +222,7 @@
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
-        [self deletePhotoDetailsFromDatabase:image];
+        [self deletePhotoFromStorage:image];
     }];
     
     [task resume];
