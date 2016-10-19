@@ -120,8 +120,6 @@
     
     [self.images addObject:newImage];
     
-//    self.storageRef = [[FIRStorage storage] reference];
-    
     NSString *dateAdded = [NSString stringWithFormat:@"%@", newImage.dateAdded];
     NSNumber *likes = [NSNumber numberWithInteger:newImage.likes];
     
@@ -169,12 +167,13 @@
     FIRStorageMetadata *metadata = [[FIRStorageMetadata alloc] initWithDictionary:@{@"contentType" : @"image"}];
     
     FIRStorageUploadTask *uploadTask = [imageRef putData:[NSData dataWithContentsOfFile:image.filePath.absoluteString] metadata:metadata completion:^(FIRStorageMetadata *metadata, NSError *error) {
-        if (error) {
-            NSLog(@"Storage Upload Error: %@", error.localizedDescription);
-        }
-        #pragma unused (uploadTask)
+            if (error) {
+                NSLog(@"Storage Upload Error: %@", error.localizedDescription);
+            }
+            [self getDataFromCloud];
+            #pragma unused (uploadTask)
     }];
-    
+  
 }
 
 //update photo in firebase
