@@ -100,6 +100,8 @@
 
 - (IBAction)commentPressed:(id)sender {
     
+    self.addCommentField.text = @"";
+    
     if (self.addCommentField.hidden == YES) {
         self.addCommentField.hidden = NO;
     } else {
